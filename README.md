@@ -1,4 +1,4 @@
-# API for integrating services with TREGO
+# API for integrating services with TREGO.
 
 ## Flight search
 
@@ -28,7 +28,7 @@ Response formatting parameters:
  * `xml` — "1" for XML output (default) and "0" for JSON
  * `pretty` — "1" for pretty JSON output
 
-Apparently, if `date2` is omitted we look for one-way flight. If `date2` is set and correct we return results of search for return flights.
+Apparently, if `date2` is omitted we look for one-way flight. If `date2` is set and correct we return results of search for round-trip flights.
 
 #### Response 
 format: XML
@@ -74,6 +74,7 @@ Response content:
  *  variant/segment/flight - 1..n, more than one if there're connecting points in the requested leg
  *  //flight - one hop flight information
  *  flight/operatingCarrier - airline IATA code (2 latin letters)
+ *  flight/marketingCarrier - selling airline IATA code (2 latin letters)
  *  flight/number - 2..4 digits, flight number
  *  flight/departure - departure airport IATA code (3 latin letters)
  *  flight/departureDate - departure date, 'YYYY-MM-DD', local
@@ -81,8 +82,8 @@ Response content:
  *  flight/arrival - arrival airport IATA code (3 latin letters)
  *  flight/arrivalDate - arrival date, 'YYYY-MM-DD', local
  *  flight/arrivalTime - arrival time, 'HH:MM', local
- *  flight/equipment - IATA (or russian domestic) aircraft/bus/train equipment type code. several letters/digits
- *  flight/cabin - cabin class. could be 'F' for 'first', 'C' for 'business', 'Y' for 'economy/couch'
+ *  flight/equipment - IATA (or russian domestic) aircraft/bus/train equipment type code.
+ *  flight/cabin - cabin class, could be 'F' for 'first', 'C' for 'business', 'Y' for 'economy/couch'
  *  flight/class - booking class
  *  flight/flightTime - pure flight time
 
