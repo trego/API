@@ -1,7 +1,5 @@
 # API for integrating services with TREGO.
 
-*NB: This document is draft of API description and will definitely be updated.*
-
 ## Flight search
 
 #### Request:
