@@ -89,3 +89,55 @@ Response content:
  *  flight/flightTime - pure flight time
 
 One can append arbitrary GET-parameter `marker` to DEEPLINK so it will look as `DEEPLINK&marker=12345.t`, it will be stored and can be seen in statistics response.
+
+
+## Statistics
+
+#### Request:
+
+HTTP GET to `http://api.trego.ru/api/v1/stat`
+
+Sample:
+```
+curl 'http://api.trego.ru/api/statistics?date1=2012-05-01&date2=2012-09-01&partner=test&password=xxx'
+```
+
+Statistics request parameters:
+
+ *  date1 - YYYY-MM-DD date
+ *  date2 - YYYY-MM-DD date
+ *  partner - partner identifier
+ *  password - password of current partner
+
+Response contains all bookings created between date1 and date2 with requested partner ID.
+
+#### Response example:
+
+```
+<bookings>
+  <booking>
+    <id>JHKHVR</id>
+    <created_at>2012-08-12 00:02:01</created_at>
+    <marker>1232:1222.t</marker>
+    <price>3199</price>
+    <profit>200</profit>
+    <currency>RUB</currency>
+    <state>PAID</state>
+  </booking>
+  …
+</bookings>
+```
+
+Response content:
+
+ *  /bookings - root element containgin all bookings
+ *  //booking - information on one booking
+ *  booking/id - unique identifier of booking
+ *  booking/created_at - YYYY-MM-DD HH:MM date and time of booking in UTC time
+ *  booking/marker - marker sent to booking deeplink in GET parameter marker
+ *  booking/from - origin IATA
+ *  booking/to - destination IATA
+ *  booking/price - prices of tickets
+ *  booking/profit - metasearch agency profit for this booking
+ *  booking/currency - currency for fields price and profit
+ *  booking/state - state of booking. Possible values PROCESSING/PAID/CANCELLED
