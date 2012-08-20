@@ -1,4 +1,4 @@
-# API for integrating services with TREGO
+# TREGO search API
 
 ## Flight search
 
