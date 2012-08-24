@@ -98,7 +98,7 @@ HTTP GET to `http://api.trego.ru/api/v1/stat`
 
 Sample:
 ```
-curl 'http://api.trego.ru/api/statistics?date1=2012-05-01&date2=2012-09-01&partner=test&password=xxx'
+curl 'http://api.trego.ru/api/stat?date1=2012-05-01&date2=2012-09-01&partner=test&password=xxx'
 ```
 
 Statistics request parameters:
